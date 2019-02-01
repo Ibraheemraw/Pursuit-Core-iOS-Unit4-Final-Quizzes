@@ -20,7 +20,12 @@ class SearchVC: UIViewController {
     }
 }
 
-extension SearchVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension SearchVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, SearchCellDelegate {
+    func presentAddToQuizCollectionAlert(alertController: UIAlertController) {
+        self.present(alertController, animated: true, completion: nil)
+    
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 50
     }
@@ -28,6 +33,7 @@ extension SearchVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCell else {
             fatalError("Error in setting up collection view. This is will give a blank generic collection view and not the one you want to use")}
+        cell.delegate = self
         return cell
     }
 }

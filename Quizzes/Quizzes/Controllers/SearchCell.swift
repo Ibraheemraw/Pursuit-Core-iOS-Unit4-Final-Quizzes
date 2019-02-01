@@ -7,9 +7,12 @@
 //
 
 import UIKit
+protocol SearchCellDelegate: AnyObject {
+    func presentAddToQuizCollectionAlert(alertController: UIAlertController)
+}
 
 class SearchCell: UICollectionViewCell {
-    
+    weak var delegate: SearchCellDelegate?
     
     lazy var addBttn: UIButton = {
         let button = UIButton()
@@ -18,6 +21,7 @@ class SearchCell: UICollectionViewCell {
         button.layer.cornerRadius = 10
         button.setTitleColor(.black, for: .normal)
         button.isEnabled = true
+        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     lazy var quizCatergoryLabel: UILabel = {
@@ -30,7 +34,7 @@ class SearchCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-       
+       buttonPressed()
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -41,7 +45,21 @@ class SearchCell: UICollectionViewCell {
         backgroundColor = .red
         layer.cornerRadius = 10
         setupViews()
+        
     }
+   @objc private func buttonPressed(){
+    guard let textLabel = quizCatergoryLabel.text else {
+        print("text label is nil")
+        return
+    }
+       let alertController = UIAlertController.init(title: "Success 🙌🏾", message: "\(textLabel) has been added to your quiz collection📚", preferredStyle: .alert)
+    let okAction = UIAlertAction.init(title: "OK", style: .default) { (Success) in
+    
+    }
+    alertController.addAction(okAction)
+    self.delegate?.presentAddToQuizCollectionAlert(alertController: alertController)
+    }
+    
     private func setupViews(){
         setupButtonView()
         setupLabelView()
