@@ -36,32 +36,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nH5-Kz-oyG">
                                 <rect key="frame" x="0.0" y="131" width="375" height="204"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tws-tI-7ac">
-                                        <rect key="frame" x="131" y="8" width="113" height="102"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="113" id="nO3-SB-zws"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="placeholder-image"/>
-                                        <connections>
-                                            <action selector="setupUserProfileImage:" destination="9Va-v1-y5C" eventType="touchUpInside" id="Qz8-vX-Xl2"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcm-tu-gDI">
-                                        <rect key="frame" x="11" y="121" width="353" height="21"/>
+                                        <rect key="frame" x="11" y="135" width="353" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.33656005032116199" green="0.73122533860660932" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="2cx-X3-Vli">
+                                        <rect key="frame" x="120" y="11" width="134" height="113"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="113" id="MV3-qB-bG2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIX-8d-Jd9">
+                                        <rect key="frame" x="120" y="11" width="134" height="113"/>
+                                        <connections>
+                                            <action selector="setupUserProfileImage:" destination="9Va-v1-y5C" eventType="touchUpInside" id="lcd-O3-oJl"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="rcm-tu-gDI" firstAttribute="leading" secondItem="nH5-Kz-oyG" secondAttribute="leading" constant="11" id="0VT-Mo-gkX"/>
+                                    <constraint firstItem="wIX-8d-Jd9" firstAttribute="trailing" secondItem="2cx-X3-Vli" secondAttribute="trailing" id="0QD-vb-66c"/>
                                     <constraint firstAttribute="height" constant="204" id="Bbs-Gn-7u3"/>
-                                    <constraint firstItem="rcm-tu-gDI" firstAttribute="top" secondItem="tws-tI-7ac" secondAttribute="bottom" constant="11" id="Hd3-r4-DXb"/>
-                                    <constraint firstItem="tws-tI-7ac" firstAttribute="centerX" secondItem="nH5-Kz-oyG" secondAttribute="centerX" id="VBI-8q-9Np"/>
-                                    <constraint firstAttribute="trailing" secondItem="rcm-tu-gDI" secondAttribute="trailing" constant="11" id="ZTj-iv-mfa"/>
-                                    <constraint firstAttribute="bottom" secondItem="tws-tI-7ac" secondAttribute="bottom" constant="94" id="cNF-LY-hHz"/>
-                                    <constraint firstItem="tws-tI-7ac" firstAttribute="top" secondItem="nH5-Kz-oyG" secondAttribute="topMargin" id="irq-R5-p9C"/>
+                                    <constraint firstItem="rcm-tu-gDI" firstAttribute="top" secondItem="2cx-X3-Vli" secondAttribute="bottom" constant="11" id="HYN-xq-MjZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2cx-X3-Vli" secondAttribute="trailing" constant="121" id="LsE-PR-gKY"/>
+                                    <constraint firstItem="wIX-8d-Jd9" firstAttribute="top" secondItem="2cx-X3-Vli" secondAttribute="top" id="OjU-I3-wNa"/>
+                                    <constraint firstItem="rcm-tu-gDI" firstAttribute="leading" secondItem="nH5-Kz-oyG" secondAttribute="leading" constant="11" id="R4f-Jj-BFP"/>
+                                    <constraint firstItem="2cx-X3-Vli" firstAttribute="leading" secondItem="nH5-Kz-oyG" secondAttribute="leading" constant="120" id="k1z-je-wYR"/>
+                                    <constraint firstItem="wIX-8d-Jd9" firstAttribute="leading" secondItem="2cx-X3-Vli" secondAttribute="leading" id="kG8-fo-Nlz"/>
+                                    <constraint firstAttribute="trailing" secondItem="rcm-tu-gDI" secondAttribute="trailing" constant="11" id="lHY-xl-Hcz"/>
+                                    <constraint firstItem="2cx-X3-Vli" firstAttribute="top" secondItem="nH5-Kz-oyG" secondAttribute="top" constant="11" id="n8z-sL-uA4"/>
+                                    <constraint firstItem="wIX-8d-Jd9" firstAttribute="bottom" secondItem="2cx-X3-Vli" secondAttribute="bottom" id="y7f-Ss-Vl8"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT PHOTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txT-bZ-iwK">
@@ -84,7 +90,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Abi-z0-LGn"/>
                     <connections>
-                        <outlet property="profileImageObj" destination="tws-tI-7ac" id="QDZ-Ka-4g0"/>
+                        <outlet property="photoLibraryBttn" destination="wIX-8d-Jd9" id="G6M-Kn-mvL"/>
+                        <outlet property="profileImageObj" destination="2cx-X3-Vli" id="vMB-2r-0Xm"/>
                         <outlet property="usernameObj" destination="rcm-tu-gDI" id="1uN-Tb-yqL"/>
                     </connections>
                 </viewController>

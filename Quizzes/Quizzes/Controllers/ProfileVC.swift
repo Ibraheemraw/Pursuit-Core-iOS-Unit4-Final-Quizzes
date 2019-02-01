@@ -7,21 +7,42 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ProfileVC: UIViewController {
+    @IBOutlet weak var photoLibraryBttn: UIButton!
     
-    @IBOutlet weak var profileImageObj: UIButton!
-    
+    @IBOutlet weak var profileImageObj: UIImageView!
     @IBOutlet weak var usernameObj: UILabel!
+    private var imagePickerController: UIImagePickerController!
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserDefaultInfo()
+        profileImageObj.contentMode = .scaleAspectFit
         
     }
-    
-
-    
+    // this function is for when you want to disable the camera if the user does not have a camera on their phone
+//    private func setupImagePickerController(){
+//        imagePickerController = UIImagePickerController()
+//        imagePickerController.delegate = self
+//
+//    }
+    private func showImagePickerController() {
+        present(imagePickerController, animated: true, completion: nil)
+    }
     @IBAction func setupUserProfileImage(_ sender: UIButton) {
+        let actionSheet = UIAlertController.init(title: "Setup Profile Picture", message: "Select your photo library📲 to add a piture🌄", preferredStyle: .actionSheet)
+        let photoLibrary = UIAlertAction.init(title: "Photo Library", style: .default) { (Success) in
+            self.imagePickerController = UIImagePickerController()
+            self.imagePickerController.delegate = self
+            self.imagePickerController.sourceType = .photoLibrary
+            self.showImagePickerController()
+        }
+        let cancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        
+        actionSheet.addAction(photoLibrary)
+        actionSheet.addAction(cancel)
+        self.present(actionSheet, animated: true, completion: nil)
     }
     private func getUserDefaultInfo(){
         if let profileName = UserDefaults.standard.object(forKey: UserDefaultKeys.userDefaultNameKey) as? String {
@@ -59,5 +80,23 @@ class ProfileVC: UIViewController {
     }
     private func doneAlert(){
         let alertController = UIAlertController.init(title: "Success 🕺🏾", message: "You have created your user name. Now Please add an image 🤳🏾 to your profile", preferredStyle: .alert)
+        let doneBttn = UIAlertAction.init(title: "Done", style: .cancel, handler: nil)
+        alertController.addAction(doneBttn)
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("\ninfo: \(info)\n") // keys: UIImagePickerController.InfoKey.originalImage
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            print("no image found")
+            return
+        }
+        profileImageObj.image = image
+        dismiss(animated: true, completion: nil)
     }
 }
