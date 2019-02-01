@@ -15,7 +15,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var usernameObj: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupProfileAlert()
+        getUserDefaultInfo()
         
     }
     
@@ -23,6 +23,15 @@ class ProfileVC: UIViewController {
     
     @IBAction func setupUserProfileImage(_ sender: UIButton) {
     }
+    private func getUserDefaultInfo(){
+        if let profileName = UserDefaults.standard.object(forKey: UserDefaultKeys.userDefaultNameKey) as? String {
+            setupProfileAlert()
+            self.usernameObj.text = profileName
+        } else {
+            setupProfileAlert()
+        }
+    }
+    
   private func setupProfileAlert(){
     let alertController = UIAlertController.init(title: "Please Create Your Profile📲", message: "Enter in your username and setup your picture. No spaces or special characters are allowed🙅🏾‍♂️", preferredStyle: .alert)
    let cancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
@@ -31,7 +40,11 @@ class ProfileVC: UIViewController {
         print("alertController textfield is nil")
         return
     }
-    self.usernameObj.text = "@\(username)"
+    let profileName = "@\(username)"
+    self.usernameObj.text = profileName
+    
+    UserDefaults.standard.set(profileName, forKey: UserDefaultKeys.userDefaultNameKey)
+    
     })
     alertController.addTextField { (textfield) in
         textfield.placeholder = "enter in a username for your profile"
@@ -39,6 +52,12 @@ class ProfileVC: UIViewController {
     }
     alertController.addAction(cancel)
     alertController.addAction(submit)
-    self.present(alertController, animated: true, completion: nil)
+    doneAlert()
+    if usernameObj.text == nil || usernameObj.text == "" {
+        self.present(alertController, animated: true, completion: nil)
+    }
+    }
+    private func doneAlert(){
+        let alertController = UIAlertController.init(title: "Success 🕺🏾", message: "You have created your user name. Now Please add an image 🤳🏾 to your profile", preferredStyle: .alert)
     }
 }
