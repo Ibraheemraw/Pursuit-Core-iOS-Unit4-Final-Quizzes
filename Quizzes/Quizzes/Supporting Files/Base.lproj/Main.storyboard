@@ -113,7 +113,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a fact" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-vB-sjV">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-vB-sjV">
                                 <rect key="frame" x="11" y="116" width="353" height="128"/>
                                 <color key="backgroundColor" red="0.86385628172588835" green="0.86385628172588835" blue="0.86385628172588835" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -122,7 +122,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter in another fact" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHx-T6-lSu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHx-T6-lSu">
                                 <rect key="frame" x="11" y="255" width="353" height="128"/>
                                 <color key="backgroundColor" red="0.88082963197969544" green="0.88082963197969544" blue="0.88082963197969544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -146,7 +146,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z2W-Qq-k2g"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ati-Fn-PG4"/>
+                    <navigationItem key="navigationItem" id="ati-Fn-PG4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Hh-s7-fFj"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="Wqh-7o-Sb0">
+                            <connections>
+                                <action selector="createQuizBttnPressed:" destination="KNU-Pe-2dN" id="9ZJ-K2-vuO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="CreateQuizitem" destination="Wqh-7o-Sb0" id="wFs-I3-Rz7"/>
+                        <outlet property="factOneDescriptionObj" destination="sqU-vB-sjV" id="Yuc-Zu-SMr"/>
+                        <outlet property="factTwoDescriptionObj" destination="fHx-T6-lSu" id="47X-fH-bFd"/>
+                        <outlet property="titleTextFeildObj" destination="S9y-5O-cqw" id="Nc3-gB-2yd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0TW-Q1-LgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
