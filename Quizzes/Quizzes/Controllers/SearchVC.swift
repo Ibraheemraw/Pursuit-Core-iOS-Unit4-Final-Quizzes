@@ -10,21 +10,24 @@ import UIKit
 
 class SearchVC: UIViewController {
 
+    let searchView = SearchView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(searchView)
 
-        // Do any additional setup after loading the view.
+    self.searchView.collectionViewObj.dataSource = self
+    self.searchView.collectionViewObj.delegate = self
+    }
+}
+
+extension SearchVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as? SearchCell else {
+            fatalError("Error in setting up collection view. This is will give a blank generic collection view and not the one you want to use")}
+        return cell
     }
-    */
-
 }

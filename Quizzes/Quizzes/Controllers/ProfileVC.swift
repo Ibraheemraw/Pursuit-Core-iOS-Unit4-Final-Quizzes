@@ -21,12 +21,7 @@ class ProfileVC: UIViewController {
         profileImageObj.contentMode = .scaleAspectFit
         
     }
-    // this function is for when you want to disable the camera if the user does not have a camera on their phone
-//    private func setupImagePickerController(){
-//        imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//
-//    }
+    // this function is for when you want to disable the camera if the user does not have a camera on their phone: setupImagePickerController()
     private func showImagePickerController() {
         present(imagePickerController, animated: true, completion: nil)
     }
@@ -39,7 +34,6 @@ class ProfileVC: UIViewController {
             self.showImagePickerController()
         }
         let cancel = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
-        
         actionSheet.addAction(photoLibrary)
         actionSheet.addAction(cancel)
         self.present(actionSheet, animated: true, completion: nil)
@@ -51,6 +45,11 @@ class ProfileVC: UIViewController {
         } else {
             setupProfileAlert()
         }
+//        if let profilePicture = UserDefaults.standard.object(forKey: UserDefaultKeys.userDefaultPicturekey) as? UIImage {
+//            self.profileImageObj.image = profilePicture
+//        } else {
+//           print("No image has been set for the profile picture")
+//        }
     }
     
   private func setupProfileAlert(){
@@ -97,6 +96,7 @@ extension ProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDele
             return
         }
         profileImageObj.image = image
+//        UserDefaults.standard.set(image, forKey: UserDefaultKeys.userDefaultPicturekey)
         dismiss(animated: true, completion: nil)
     }
 }
