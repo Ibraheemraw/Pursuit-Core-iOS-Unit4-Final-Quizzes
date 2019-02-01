@@ -42,6 +42,9 @@
                                             <constraint firstAttribute="width" constant="113" id="nO3-SB-zws"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="placeholder-image"/>
+                                        <connections>
+                                            <action selector="setupUserProfileImage:" destination="9Va-v1-y5C" eventType="touchUpInside" id="Qz8-vX-Xl2"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcm-tu-gDI">
                                         <rect key="frame" x="11" y="121" width="353" height="21"/>
@@ -80,6 +83,10 @@
                         <viewLayoutGuide key="safeArea" id="02l-4Y-Z9j"/>
                     </view>
                     <navigationItem key="navigationItem" id="Abi-z0-LGn"/>
+                    <connections>
+                        <outlet property="profileImageObj" destination="tws-tI-7ac" id="QDZ-Ka-4g0"/>
+                        <outlet property="usernameObj" destination="rcm-tu-gDI" id="1uN-Tb-yqL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45P-dz-uc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
