@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SearchVC-->
         <scene sceneID="J6T-yg-Sao">
             <objects>
-                <viewController id="mKN-nS-14n" sceneMemberID="viewController">
+                <viewController id="mKN-nS-14n" customClass="SearchVC" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eGn-nz-LP8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="2154.4000000000001" y="107.49625187406298"/>
         </scene>
-        <!--View Controller-->
+        <!--ProfileVC-->
         <scene sceneID="fWh-E0-HDl">
             <objects>
-                <viewController id="9Va-v1-y5C" sceneMemberID="viewController">
+                <viewController id="9Va-v1-y5C" customClass="ProfileVC" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BOf-dr-MHt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="68" y="1709.5952023988007"/>
         </scene>
-        <!--View Controller-->
+        <!--CreateVC-->
         <scene sceneID="0Lz-Kb-0hk">
             <objects>
-                <viewController id="KNU-Pe-2dN" sceneMemberID="viewController">
+                <viewController id="KNU-Pe-2dN" customClass="CreateVC" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpi-Qe-7s5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="2154.4000000000001" y="1434.3328335832084"/>
         </scene>
-        <!--View Controller-->
+        <!--QuizVC-->
         <scene sceneID="kmi-06-gYk">
             <objects>
-                <viewController id="1zs-2v-Jth" sceneMemberID="viewController">
+                <viewController id="1zs-2v-Jth" customClass="QuizVC" customModule="Quizzes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tiq-GE-ZDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="-871.20000000000005" y="1709.5952023988007"/>
         </scene>
-        <!--create-->
+        <!--Create-->
         <scene sceneID="hve-UR-dij">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FNj-Kn-SLH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="create" image="create-icon" id="6qq-MQ-cYr"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="create-icon" id="6qq-MQ-cYr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Goo-Ry-ctg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -131,11 +131,11 @@
             </objects>
             <point key="canvasLocation" x="1215.2" y="1434.3328335832084"/>
         </scene>
-        <!--search-->
+        <!--Search-->
         <scene sceneID="N6q-jv-OAk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N7U-6H-4dg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="search" image="icons8-search_filled" id="X6h-pe-MmE"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="icons8-search_filled" id="X6h-pe-MmE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LBp-U8-9qW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
