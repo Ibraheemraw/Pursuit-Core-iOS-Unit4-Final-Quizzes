@@ -22,6 +22,26 @@ class CreateVC: UIViewController {
         CreateQuizitem.isEnabled = false
         //accessToCreateAQuiz()
     }
+    private func hasTextViewBeenFilledIn(){
+        guard let factOne = factOneDescriptionObj.text, let factTwo = factTwoDescriptionObj.text else {
+            fatalError("Something wrong when unwrapping values")
+        }
+        switch factOne {
+        case "":
+            requiredFillinAlert()
+            CreateQuizitem.isEnabled = false
+        default:
+            CreateQuizitem.isEnabled = true
+        }
+        switch factTwo {
+        case "":
+            requiredFillinAlert()
+            CreateQuizitem.isEnabled = false
+        default:
+            CreateQuizitem.isEnabled = true
+        }
+        
+    }
     
     private func accessToCreateAQuiz(){
         guard  let title = titleTextFeildObj.text else {
@@ -29,12 +49,15 @@ class CreateVC: UIViewController {
         }
         if title == ""  {
             CreateQuizitem.isEnabled = false
-            
-        } else {
-            CreateQuizitem.isEnabled = true
+            requiredFillinAlert()
         }
     }
-    private func requiredFillinAlert(){}
+    private func requiredFillinAlert(){
+        let alertController = UIAlertController.init(title: "Hey", message: "You have not filled in the 2 facts. Please fill those in to create your Quiz FlashCards", preferredStyle: .alert)
+        let okAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     @IBAction func createQuizBttnPressed(_ sender: UIBarButtonItem) {
     }
 }
@@ -51,10 +74,15 @@ extension CreateVC: UITextFieldDelegate, UITextViewDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         accessToCreateAQuiz()
+        requiredFillinAlert()
         return true
     }
-    func textViewDidChange(_ textView: UITextView) {
-        
-    }
-    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            hasTextViewBeenFilledIn()
+            return false
+        }
+        return true    
+}
 }
