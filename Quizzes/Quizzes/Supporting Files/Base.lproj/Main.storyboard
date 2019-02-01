@@ -106,7 +106,44 @@
                     <view key="view" contentMode="scaleToFill" id="fpi-Qe-7s5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter in a title for your Quiz Card" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S9y-5O-cqw">
+                                <rect key="frame" x="11" y="75" width="353" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a fact" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sqU-vB-sjV">
+                                <rect key="frame" x="11" y="116" width="353" height="128"/>
+                                <color key="backgroundColor" red="0.86385628172588835" green="0.86385628172588835" blue="0.86385628172588835" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9hU-Mi-Hs0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter in another fact" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fHx-T6-lSu">
+                                <rect key="frame" x="11" y="255" width="353" height="128"/>
+                                <color key="backgroundColor" red="0.88082963197969544" green="0.88082963197969544" blue="0.88082963197969544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="0b4-go-ls1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S9y-5O-cqw" firstAttribute="leading" secondItem="sqU-vB-sjV" secondAttribute="leading" id="1rm-Ac-vab"/>
+                            <constraint firstItem="S9y-5O-cqw" firstAttribute="top" secondItem="z2W-Qq-k2g" secondAttribute="top" constant="11" id="Ga1-eg-N3d"/>
+                            <constraint firstItem="sqU-vB-sjV" firstAttribute="leading" secondItem="z2W-Qq-k2g" secondAttribute="leading" constant="11" id="LtQ-5c-izd"/>
+                            <constraint firstItem="fHx-T6-lSu" firstAttribute="top" secondItem="sqU-vB-sjV" secondAttribute="bottom" constant="11" id="Mpm-sR-4PR"/>
+                            <constraint firstItem="sqU-vB-sjV" firstAttribute="top" secondItem="S9y-5O-cqw" secondAttribute="bottom" constant="11" id="c5u-TV-EDI"/>
+                            <constraint firstItem="fHx-T6-lSu" firstAttribute="leading" secondItem="z2W-Qq-k2g" secondAttribute="leading" constant="11" id="llC-IC-rYd"/>
+                            <constraint firstItem="S9y-5O-cqw" firstAttribute="trailing" secondItem="sqU-vB-sjV" secondAttribute="trailing" id="pTO-2n-2Nq"/>
+                            <constraint firstItem="z2W-Qq-k2g" firstAttribute="trailing" secondItem="fHx-T6-lSu" secondAttribute="trailing" constant="11" id="s4x-Vc-cCZ"/>
+                            <constraint firstItem="z2W-Qq-k2g" firstAttribute="trailing" secondItem="sqU-vB-sjV" secondAttribute="trailing" constant="11" id="xxJ-gZ-phV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="z2W-Qq-k2g"/>
                     </view>
                     <navigationItem key="navigationItem" id="ati-Fn-PG4"/>
