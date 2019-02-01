@@ -13,13 +13,11 @@ class SearchCell: UICollectionViewCell {
     
     lazy var addBttn: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .brown
+        button.backgroundColor = .white
         button.setTitle("Action", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.isEnabled = true
         //3 create target function
-       
-        
         return button
     }()
     lazy var quizCatergoryLabel: UILabel = {
@@ -42,13 +40,16 @@ class SearchCell: UICollectionViewCell {
     private func commonInit(){
         backgroundColor = .red
         layer.cornerRadius = 10
-       // setupViews()
+        setupViews()
     }
     private func setupViews(){
-
+        setupButtonView()
     }
     private func setupButtonView(){
-        
+        addSubview(addBttn)
+        addBttn.translatesAutoresizingMaskIntoConstraints = false
+        addBttn.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        addBttn.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
     }
     private func setupLabelView(){
         
