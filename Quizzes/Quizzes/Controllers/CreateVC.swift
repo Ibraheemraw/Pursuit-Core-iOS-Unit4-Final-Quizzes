@@ -12,7 +12,7 @@ class CreateVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Create A Quiz📝"
         // Do any additional setup after loading the view.
     }
     

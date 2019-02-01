@@ -17,6 +17,7 @@ class ProfileVC: UIViewController {
     private var imagePickerController: UIImagePickerController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Create A Profile👤"
         getUserDefaultInfo()
         profileImageObj.contentMode = .scaleAspectFit
         

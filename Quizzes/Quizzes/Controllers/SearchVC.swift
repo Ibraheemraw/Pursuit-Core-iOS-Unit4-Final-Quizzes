@@ -13,6 +13,7 @@ class SearchVC: UIViewController {
     let searchView = SearchView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Search🔍"
         view.addSubview(searchView)
 
     self.searchView.collectionViewObj.dataSource = self
@@ -23,7 +24,11 @@ class SearchVC: UIViewController {
 extension SearchVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, SearchCellDelegate {
     func presentAddToQuizCollectionAlert(alertController: UIAlertController) {
         self.present(alertController, animated: true, completion: nil)
-    
+        
+    }
+    func gotoNextViewController(viewController: UIViewController) {
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

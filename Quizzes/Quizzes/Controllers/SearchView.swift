@@ -21,7 +21,6 @@ class SearchView: UIView {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
-//        addSubview(<#T##view: UIView##UIView#>)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

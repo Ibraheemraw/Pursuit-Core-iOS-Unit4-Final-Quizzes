@@ -9,6 +9,7 @@
 import UIKit
 protocol SearchCellDelegate: AnyObject {
     func presentAddToQuizCollectionAlert(alertController: UIAlertController)
+    func gotoNextViewController(viewController: UIViewController)
 }
 
 class SearchCell: UICollectionViewCell {
@@ -52,12 +53,16 @@ class SearchCell: UICollectionViewCell {
         print("text label is nil")
         return
     }
+       let destinationVC = UIViewController()
        let alertController = UIAlertController.init(title: "Success 🙌🏾", message: "\(textLabel) has been added to your quiz collection📚", preferredStyle: .alert)
     let okAction = UIAlertAction.init(title: "OK", style: .default) { (Success) in
-    
+       
+        self.delegate?.gotoNextViewController(viewController: destinationVC)
+       
     }
     alertController.addAction(okAction)
     self.delegate?.presentAddToQuizCollectionAlert(alertController: alertController)
+    
     }
     
     private func setupViews(){
