@@ -14,7 +14,9 @@ class SearchCell: UICollectionViewCell {
     lazy var addBttn: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setTitle("Action", for: .normal)
+//        button.setTitle("Action", for: .normal)
+        button.setImage(UIImage.init(named: "icons8-plus_math_filled"), for: .normal)
+        
         button.setTitleColor(.black, for: .normal)
         button.isEnabled = true
         //3 create target function
@@ -50,6 +52,10 @@ class SearchCell: UICollectionViewCell {
         addBttn.translatesAutoresizingMaskIntoConstraints = false
         addBttn.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         addBttn.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        addBttn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        addBttn.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        
     }
     private func setupLabelView(){
         
