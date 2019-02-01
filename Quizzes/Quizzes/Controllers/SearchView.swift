@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchView: UIView {
-    lazy var collectionViewObj: UICollectionView = {
+    lazy var searchColletion: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize =  CGSize.init(width: 350, height: 400)
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
@@ -28,19 +28,19 @@ class SearchView: UIView {
     }
     private func commonInit(){
         backgroundColor = .white
-        addSubview(collectionViewObj)
-        collectionViewObj.register(SearchCell.self, forCellWithReuseIdentifier: "SearchCell")
+        addSubview(searchColletion)
+        searchColletion.register(SearchCell.self, forCellWithReuseIdentifier: "SearchCell")
         setupViews()
     }
     private func setupViews(){
-        setupFavoriteCollectionViewContraints()
+        setupSearchCollectionContraints()
     }
-    private func setupFavoriteCollectionViewContraints() {
-        collectionViewObj.translatesAutoresizingMaskIntoConstraints = false
-        collectionViewObj.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        collectionViewObj.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        collectionViewObj.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-        collectionViewObj.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    private func setupSearchCollectionContraints() {
+        searchColletion.translatesAutoresizingMaskIntoConstraints = false
+        searchColletion.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        searchColletion.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        searchColletion.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        searchColletion.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
         
     }

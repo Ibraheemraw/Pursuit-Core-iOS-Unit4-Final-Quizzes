@@ -18,7 +18,7 @@ class SearchCell: UICollectionViewCell {
     lazy var addBttn: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setImage(UIImage.init(named: "icons8-plus_math_filled"), for: .normal)
+        button.setImage(UIImage.init(named: "icons8-more_filled"), for: .normal)
         button.layer.cornerRadius = 10
         button.setTitleColor(.black, for: .normal)
         button.isEnabled = true
@@ -27,7 +27,7 @@ class SearchCell: UICollectionViewCell {
     }()
     lazy var quizCatergoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "Best Seller list label"
+        label.text = "Category Title"
         label.textColor = .white
         label.backgroundColor = .gray
         return label
@@ -64,7 +64,6 @@ class SearchCell: UICollectionViewCell {
     self.delegate?.presentAddToQuizCollectionAlert(alertController: alertController)
     
     }
-    
     private func setupViews(){
         setupButtonView()
         setupLabelView()

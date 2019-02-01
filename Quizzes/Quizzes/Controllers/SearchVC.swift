@@ -16,8 +16,8 @@ class SearchVC: UIViewController {
         self.title = "Search🔍"
         view.addSubview(searchView)
 
-    self.searchView.collectionViewObj.dataSource = self
-    self.searchView.collectionViewObj.delegate = self
+    self.searchView.searchColletion.dataSource = self
+    self.searchView.searchColletion.delegate = self
     }
 }
 

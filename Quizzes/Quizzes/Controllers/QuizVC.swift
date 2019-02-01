@@ -9,12 +9,29 @@
 import UIKit
 
 class QuizVC: UIViewController {
-    
+    let quizView = QuizView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.addSubview(quizView)
+//        view.backgroundColor = .yellow
         self.title = "Quizzes"
-       
+       quizView.quizCollection.delegate = self
+        quizView.quizCollection.dataSource = self
     }
+    
+}
+
+extension QuizVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else {
+            fatalError("Error in setting up collection view. This is will give a blank generic collection view and not the one you want to use")}
+        //cell.delegate = self
+        return cell
+    }
+    
     
 }

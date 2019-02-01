@@ -83,6 +83,6 @@ extension CreateVC: UITextFieldDelegate, UITextViewDelegate {
             hasTextViewBeenFilledIn()
             return false
         }
-        return true    
+        return true 
 }
 }
