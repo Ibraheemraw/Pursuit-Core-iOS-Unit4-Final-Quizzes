@@ -31,6 +31,7 @@ class SearchCell: UICollectionViewCell {
         label.textColor = .black
         label.backgroundColor = .white
         label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     override init(frame: CGRect) {
