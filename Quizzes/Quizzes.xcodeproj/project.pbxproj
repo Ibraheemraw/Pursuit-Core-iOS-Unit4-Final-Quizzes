@@ -19,6 +19,9 @@
 		4838E25122051AE40028E0FB /* DetailQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E25022051AE40028E0FB /* DetailQuizVC.swift */; };
 		4838E25322051CC80028E0FB /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E25222051CC80028E0FB /* DetailView.swift */; };
 		4838E25722051D0E0028E0FB /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E25622051D0E0028E0FB /* DetailCell.swift */; };
+		4838E259220602040028E0FB /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E258220602040028E0FB /* FlashCard.swift */; };
+		4838E25D22062A1A0028E0FB /* QuizFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E25C22062A1A0028E0FB /* QuizFramework.swift */; };
+		4838E25F22062B700028E0FB /* QuizApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E25E22062B700028E0FB /* QuizApiClient.swift */; };
 		577118C12203796A00B9DD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577118C02203796A00B9DD0B /* AppDelegate.swift */; };
 		577118C62203796A00B9DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577118C42203796A00B9DD0B /* Main.storyboard */; };
 		577118C82203796B00B9DD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577118C72203796B00B9DD0B /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		4838E25022051AE40028E0FB /* DetailQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailQuizVC.swift; sourceTree = "<group>"; };
 		4838E25222051CC80028E0FB /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4838E25622051D0E0028E0FB /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		4838E258220602040028E0FB /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		4838E25C22062A1A0028E0FB /* QuizFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFramework.swift; sourceTree = "<group>"; };
+		4838E25E22062B700028E0FB /* QuizApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizApiClient.swift; sourceTree = "<group>"; };
 		577118BD2203796A00B9DD0B /* Quizzes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577118C02203796A00B9DD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577118C52203796A00B9DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +93,10 @@
 		577118B42203796A00B9DD0B = {
 			isa = PBXGroup;
 			children = (
+				4838E25C22062A1A0028E0FB /* QuizFramework.swift */,
+				4838E25E22062B700028E0FB /* QuizApiClient.swift */,
 				4838E25622051D0E0028E0FB /* DetailCell.swift */,
+				4838E258220602040028E0FB /* FlashCard.swift */,
 				577118BF2203796A00B9DD0B /* Quizzes */,
 				577118BE2203796A00B9DD0B /* Products */,
 			);
@@ -224,10 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4838E24B2204CA4C0028E0FB /* SearchCell.swift in Sources */,
+				4838E25D22062A1A0028E0FB /* QuizFramework.swift in Sources */,
 				4838E24222049EE50028E0FB /* ProfileVC.swift in Sources */,
 				4838E25722051D0E0028E0FB /* DetailCell.swift in Sources */,
+				4838E25F22062B700028E0FB /* QuizApiClient.swift in Sources */,
 				4838E25322051CC80028E0FB /* DetailView.swift in Sources */,
 				4838E25122051AE40028E0FB /* DetailQuizVC.swift in Sources */,
+				4838E259220602040028E0FB /* FlashCard.swift in Sources */,
 				4838E23E22049EBC0028E0FB /* SearchVC.swift in Sources */,
 				4838E24F220505600028E0FB /* QuizCell.swift in Sources */,
 				577118D722037ABA00B9DD0B /* NetworkHelper.swift in Sources */,
