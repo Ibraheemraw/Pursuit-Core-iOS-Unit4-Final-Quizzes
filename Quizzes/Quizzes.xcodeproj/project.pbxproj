@@ -16,6 +16,7 @@
 		4838E24B2204CA4C0028E0FB /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E24A2204CA4C0028E0FB /* SearchCell.swift */; };
 		4838E24D2205049D0028E0FB /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E24C2205049D0028E0FB /* QuizView.swift */; };
 		4838E24F220505600028E0FB /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E24E220505600028E0FB /* QuizCell.swift */; };
+		4838E25122051AE40028E0FB /* DetailQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4838E25022051AE40028E0FB /* DetailQuizVC.swift */; };
 		577118C12203796A00B9DD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577118C02203796A00B9DD0B /* AppDelegate.swift */; };
 		577118C62203796A00B9DD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577118C42203796A00B9DD0B /* Main.storyboard */; };
 		577118C82203796B00B9DD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577118C72203796B00B9DD0B /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		4838E24A2204CA4C0028E0FB /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		4838E24C2205049D0028E0FB /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		4838E24E220505600028E0FB /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
+		4838E25022051AE40028E0FB /* DetailQuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailQuizVC.swift; sourceTree = "<group>"; };
 		577118BD2203796A00B9DD0B /* Quizzes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quizzes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		577118C02203796A00B9DD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577118C52203796A00B9DD0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				577118C42203796A00B9DD0B /* Main.storyboard */,
+				4838E25022051AE40028E0FB /* DetailQuizVC.swift */,
 				577118C02203796A00B9DD0B /* AppDelegate.swift */,
 				577118C72203796B00B9DD0B /* Assets.xcassets */,
 				577118C92203796B00B9DD0B /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			files = (
 				4838E24B2204CA4C0028E0FB /* SearchCell.swift in Sources */,
 				4838E24222049EE50028E0FB /* ProfileVC.swift in Sources */,
+				4838E25122051AE40028E0FB /* DetailQuizVC.swift in Sources */,
 				4838E23E22049EBC0028E0FB /* SearchVC.swift in Sources */,
 				4838E24F220505600028E0FB /* QuizCell.swift in Sources */,
 				577118D722037ABA00B9DD0B /* NetworkHelper.swift in Sources */,
@@ -375,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZEKMNK5YD3;
+				DEVELOPMENT_TEAM = 465ZSD32S3;
 				INFOPLIST_FILE = Quizzes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,7 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZEKMNK5YD3;
+				DEVELOPMENT_TEAM = 465ZSD32S3;
 				INFOPLIST_FILE = Quizzes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
