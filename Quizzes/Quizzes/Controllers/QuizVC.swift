@@ -21,7 +21,11 @@ class QuizVC: UIViewController {
     
 }
 
-extension QuizVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension QuizVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, QuizCellDelegate {
+    func presentDeleteAlertController(alertController: UIAlertController) {
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 50
     }
@@ -29,7 +33,7 @@ extension QuizVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuizCell else {
             fatalError("Error in setting up collection view. This is will give a blank generic collection view and not the one you want to use")}
-        //cell.delegate = self
+        cell.delegate = self
         return cell
     }
     

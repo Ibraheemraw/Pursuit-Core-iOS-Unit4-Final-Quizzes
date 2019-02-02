@@ -28,8 +28,9 @@ class SearchCell: UICollectionViewCell {
     lazy var quizCatergoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Category Title"
-        label.textColor = .white
-        label.backgroundColor = .gray
+        label.textColor = .black
+        label.backgroundColor = .white
+        label.textAlignment = .center
         return label
     }()
     override init(frame: CGRect) {
@@ -43,7 +44,7 @@ class SearchCell: UICollectionViewCell {
         commonInit()
     }
     private func commonInit(){
-        backgroundColor = .red
+        backgroundColor = .white
         layer.cornerRadius = 10
         setupViews()
         
@@ -73,8 +74,8 @@ class SearchCell: UICollectionViewCell {
  addBttn.translatesAutoresizingMaskIntoConstraints = false
         addBttn.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         addBttn.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        addBttn.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        addBttn.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        addBttn.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        addBttn.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     private func setupLabelView(){
         addSubview(quizCatergoryLabel)
