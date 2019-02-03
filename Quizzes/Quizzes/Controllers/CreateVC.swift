@@ -13,6 +13,8 @@ class CreateVC: UIViewController {
     @IBOutlet weak var factOneDescriptionObj: UITextView!
     @IBOutlet weak var factTwoDescriptionObj: UITextView!
     @IBOutlet weak var CreateQuizitem: UIBarButtonItem!
+    var id = 52
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Create A Quiz📝"
@@ -59,6 +61,14 @@ class CreateVC: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     @IBAction func createQuizBttnPressed(_ sender: UIBarButtonItem) {
+        guard let title = titleTextFeildObj.text, let factOne = factOneDescriptionObj.text, let factTwo = factTwoDescriptionObj.text else {
+            fatalError("textField value is \(String(describing: titleTextFeildObj.text)) first textView value is \(String(describing: factOneDescriptionObj.text)) second textView value is \(String(describing: factTwoDescriptionObj.text))")
+        }
+        let customQuizCard = UsersQuizCollection.init(title: title, factsOne: factOne, factTwo: factTwo, quizId: String(id))
+        UsersQuizCollectionFramework.addQuiz(quiz: customQuizCard)
+        id += 1
+        print(id)
+       
     }
 }
 

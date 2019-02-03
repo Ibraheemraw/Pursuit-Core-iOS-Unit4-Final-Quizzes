@@ -1,5 +1,5 @@
 //
-//  QuizCollectionFramwork.swift
+//  UsersQuizCollectionFramwork.swift
 //  Quizzes
 //
 //  Created by Ibraheem rawlinson on 2/2/19.
@@ -9,16 +9,16 @@
 import Foundation
 
 
-final class QuizCollectionFramwork {
-    static let fileName = "QuizCollection.plist"
-    private static var collection = [QuizCollection]()
+final class UsersQuizCollectionFramework {
+    static let fileName = "UsersQuizCollection.plist"
+    private static var collection = [UsersQuizCollection]()
     private init(){}
-    static func fetchQuizCollectionFromDocumentsDirectory() -> [QuizCollection]{
+    static func fetchUsersQuizCollectionFromDocumentsDirectory() -> [UsersQuizCollection]{
         let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: fileName).path
         if FileManager.default.fileExists(atPath: path){
             if let data = FileManager.default.contents(atPath: path){
                 do {
-                    collection = try PropertyListDecoder().decode([QuizCollection].self, from: data)
+                    collection = try PropertyListDecoder().decode([UsersQuizCollection].self, from: data)
                 } catch {
                     print("property list decoding error: \(error)")
                 }
@@ -30,7 +30,7 @@ final class QuizCollectionFramwork {
         }
         return collection
     }
-    static func saveQuizCollection(){
+    static func saveUsersQuizCollection(){
         // step 1  create the path
         let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: fileName)
         //step 2 create a do catch and encode the data
@@ -41,13 +41,13 @@ final class QuizCollectionFramwork {
             print("property list encoding \(error)")
         }
     }
-    static func addQuiz(quiz: QuizCollection){
+    static func addQuiz(quiz: UsersQuizCollection){
         collection.append(quiz)
-        saveQuizCollection()
+        saveUsersQuizCollection()
     }
-    static func deleteQuizFromQuizCollection(favoriteQuiz: QuizCollection, atIndex: Int){
+    static func deleteQuizFromUsersQuizCollection(favoriteQuiz: UsersQuizCollection, atIndex: Int){
          // get current favorite evnets and remove favorite from index
-        var favoriteQuizzes = fetchQuizCollectionFromDocumentsDirectory()
+        var favoriteQuizzes = fetchUsersQuizCollectionFromDocumentsDirectory()
         favoriteQuizzes.remove(at: atIndex)
         // save changes to documents directory
         let path = DataPersistenceManager.filepathToDocumentsDiretory(filename: fileName)
@@ -58,12 +58,12 @@ final class QuizCollectionFramwork {
             print("property list encoding error: \(error)")
         }
     }
-//    static func updateQuizCollection(item: Item, atIndex index: Int){
+//    static func updateUsersQuizCollection(item: Item, atIndex index: Int){
 //        
 //    }
     
     static public func isFavorite(id: String) -> Bool {
-        let index = fetchQuizCollectionFromDocumentsDirectory().index { $0.id == id }
+        let index = fetchUsersQuizCollectionFromDocumentsDirectory().index { $0.quizId == id }
         var found = false
         if let _ = index {
             found = true

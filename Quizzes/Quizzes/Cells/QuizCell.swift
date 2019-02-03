@@ -13,7 +13,7 @@ protocol QuizCellDelegate: AnyObject {
 
 class QuizCell: UICollectionViewCell {
     weak var delegate: QuizCellDelegate?
-    
+    var collection: UsersQuizCollection?
     lazy var deleteBttn: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -30,6 +30,7 @@ class QuizCell: UICollectionViewCell {
         label.textColor = .black
         label.backgroundColor = .white
         label.textAlignment = .center
+        label.numberOfLines = 3
         return label
     }()
     override init(frame: CGRect) {
@@ -48,15 +49,18 @@ class QuizCell: UICollectionViewCell {
         setupViews()
         
     }
+    public func configureCell(usersCards: UsersQuizCollection){
+        quizCatergoryTitle.text = usersCards.title
+    }
     @objc private func buttonPressed(){
+        
         let actionSheet = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (Success) in
-            
-        }
+        let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (Success) in}
         let cacnelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(cacnelAction)
         actionSheet.addAction(deleteAction)
         self.delegate?.presentDeleteAlertController(alertController: actionSheet)
+        
     }
     
     private func setupViews(){

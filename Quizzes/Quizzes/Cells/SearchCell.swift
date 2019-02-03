@@ -14,6 +14,7 @@ protocol SearchCellDelegate: AnyObject {
 
 class SearchCell: UICollectionViewCell {
     weak var delegate: SearchCellDelegate?
+    var collection: QuizCollection?
     
     lazy var addBttn: UIButton = {
         let button = UIButton()
@@ -34,6 +35,22 @@ class SearchCell: UICollectionViewCell {
         label.numberOfLines = 2
         return label
     }()
+    lazy var factOneLabel: UITextView = {
+        let textView = UITextView()
+        textView.text = "Fact 1"
+        textView.textColor = .black
+        textView.backgroundColor = .white
+        textView.textAlignment = .center
+        return textView
+    }()
+    lazy var factTwoLabel: UITextView = {
+        let textView = UITextView()
+        textView.text = "Fact 2"
+        textView.textColor = .black
+        textView.backgroundColor = .white
+        textView.textAlignment = .center
+        return textView
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -50,20 +67,27 @@ class SearchCell: UICollectionViewCell {
         setupViews()
         
     }
+
    @objc private func buttonPressed(){
     guard let textLabel = quizCatergoryLabel.text else {
         print("text label is nil")
         return
     }
+    
+    let factOne = factOneLabel.text ?? "This first fact is nil"
+    let factTwo = factTwoLabel.text ?? "This second fact is nil"
+    guard !UsersQuizCollectionFramework.isFavorite(id: collection?.id ?? "Quiz id1 is nil") else {
+        print("Duplicate", "\(collection?.quizTitle ?? "Quiz Title is nil") already exist in your favorites")
+        return
+    }
        let destinationVC = UIViewController()
        let alertController = UIAlertController.init(title: "Success 🙌🏾", message: "\(textLabel) has been added to your quiz collection📚", preferredStyle: .alert)
     let okAction = UIAlertAction.init(title: "OK", style: .default) { (Success) in
-       
-        self.delegate?.gotoNextViewController(viewController: destinationVC)
-       
-    }
+        let usersCards = UsersQuizCollection.init(title: self.collection?.quizTitle ?? textLabel, factsOne: self.collection?.facts[0] ?? factOne, factTwo: self.collection?.facts[1] ?? factTwo, quizId: self.collection?.id ?? "Quiz id is nil")
+        UsersQuizCollectionFramework.addQuiz(quiz: usersCards)
+        self.delegate?.gotoNextViewController(viewController: destinationVC)}
     alertController.addAction(okAction)
-    self.delegate?.presentAddToQuizCollectionAlert(alertController: alertController)
+self.delegate?.presentAddToQuizCollectionAlert(alertController: alertController)
     
     }
     private func setupViews(){
