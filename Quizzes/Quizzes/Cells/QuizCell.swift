@@ -9,11 +9,13 @@
 import UIKit
 protocol QuizCellDelegate: AnyObject {
     func presentDeleteAlertController(alertController: UIAlertController)
+    func deleteQuizCard(index: Int)
 }
 
 class QuizCell: UICollectionViewCell {
-    weak var delegate: QuizCellDelegate?
-    var collection: UsersQuizCollection?
+   weak var delegate: QuizCellDelegate?
+    
+    
     lazy var deleteBttn: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -21,7 +23,7 @@ class QuizCell: UICollectionViewCell {
         button.layer.cornerRadius = 10
         button.setTitleColor(.black, for: .normal)
         button.isEnabled = true
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+       button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
     lazy var quizCatergoryTitle: UILabel = {
@@ -55,12 +57,16 @@ class QuizCell: UICollectionViewCell {
     @objc private func buttonPressed(){
         
         let actionSheet = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (Success) in}
+        let deleteAction = UIAlertAction.init(title: "Delete", style: .destructive) { (Success) in
+             self.delegate?.deleteQuizCard(index: self.deleteBttn.tag)
+        }
         let cacnelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(cacnelAction)
         actionSheet.addAction(deleteAction)
-        self.delegate?.presentDeleteAlertController(alertController: actionSheet)
-        
+       self.delegate?.presentDeleteAlertController(alertController: actionSheet)
+        func deleteCard(indexPath: IndexPath) {
+          
+        }
     }
     
     private func setupViews(){

@@ -14,7 +14,7 @@ protocol SearchCellDelegate: AnyObject {
 
 class SearchCell: UICollectionViewCell {
     weak var delegate: SearchCellDelegate?
-    var collection: QuizCollection?
+     var collection: QuizCollection?
     
     lazy var addBttn: UIButton = {
         let button = UIButton()

@@ -30,6 +30,7 @@ class QuizView: UIView {
         backgroundColor = .white
         addSubview(quizCollection)
         quizCollection.register(QuizCell.self, forCellWithReuseIdentifier: "QuizCell")
+    
         setupViews()
     }
     private func setupViews(){

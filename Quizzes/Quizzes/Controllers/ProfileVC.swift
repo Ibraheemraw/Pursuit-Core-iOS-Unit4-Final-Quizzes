@@ -46,11 +46,6 @@ class ProfileVC: UIViewController {
         } else {
             setupProfileAlert()
         }
-//        if let profilePicture = UserDefaults.standard.object(forKey: UserDefaultKeys.userDefaultPicturekey) as? UIImage {
-//            self.profileImageObj.image = profilePicture
-//        } else {
-//           print("No image has been set for the profile picture")
-//        }
     }
     
   private func setupProfileAlert(){
